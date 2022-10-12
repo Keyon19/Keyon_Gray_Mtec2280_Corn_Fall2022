@@ -8,7 +8,6 @@ PImage player;
 PImage alien;
 
 int[] position = new int[5];
-
 int[] speed = new int[2];
 
 void setup(){
@@ -41,7 +40,7 @@ void draw(){
   speed[1] = 20;
 
 if(moveYA < 700){
-  for( int i =0; i < 5; i++){
+  for( int i =0; i <= 4; i++){
   alien.resize(70,0);
   image(alien,position[i],moveYA);
   }
@@ -58,12 +57,16 @@ if(moveYA < 700){
       previousTime = currentTime;
     }
   }
-  
-  
   /*
   if(currentTime - previousTime >= timer){
     moveYA += 20;
     previousTime = currentTime;
   }
   */
+}
+  
+void bullet(int x, int y, int w, int h){
+  rectMode(CENTER);
+  fill(0,100,100);
+  rect(mouseX,600,20,60);
 }
