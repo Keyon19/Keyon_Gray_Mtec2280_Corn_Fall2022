@@ -3,6 +3,7 @@ int previousTime = 0;
 int timer = 500; // .5 second timer
 
 int moveYA = 0; //used as a way to move the alien down (y-position)
+int moveYB = 0; //used to move the bullet 
 
 PImage player;
 PImage alien;
@@ -64,9 +65,19 @@ if(moveYA < 700){
   }
   */
 }
-  
+ 
 void bullet(int x, int y, int w, int h){
   rectMode(CENTER);
   fill(0,100,100);
-  rect(mouseX,600,20,60);
+  rect(mouseX,moveYB,20,60);
+}
+
+void mousePressed(){
+  moveYB = 600;
+  if(moveYB == 600){
+    moveYB -=20;
+  } else {
+    moveYB = 600;
+  }
+
 }
