@@ -8,7 +8,8 @@ PImage player;
 PImage alien;
 
 int[] position = new int[5];
-int currentPosition = 0;
+
+int[] speed = new int[2];
 
 void setup(){
   size(1000,700);  
@@ -16,6 +17,7 @@ void setup(){
   
     player = loadImage("player.png");
     alien = loadImage("alien.png");
+    
 }
 
 void draw(){
@@ -34,17 +36,34 @@ void draw(){
   position[2] = 500;
   position[3] = 700;
   position[4] = 900;
+  
+  speed[0] = 40;
+  speed[1] = 20;
 
+if(moveYA < 700){
   for( int i =0; i < 5; i++){
   alien.resize(70,0);
   image(alien,position[i],moveYA);
   }
-
+} else {
+  moveYA =0;
+  println("respwaning");
+}
   player.resize(150,0);
   image(player,mouseX,600);
 
+  for (int i=0; i < 2; i++){
+    if(currentTime - previousTime >= timer){
+      moveYA += speed[i];
+      previousTime = currentTime;
+    }
+  }
+  
+  
+  /*
   if(currentTime - previousTime >= timer){
     moveYA += 20;
     previousTime = currentTime;
   }
+  */
 }
