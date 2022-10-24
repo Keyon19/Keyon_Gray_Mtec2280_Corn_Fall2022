@@ -39,6 +39,7 @@ void draw(){
   
   speed[0] = 40;
   speed[1] = 20;
+
   if (screenState == "home"){
     background(0);
     textSize(36);
@@ -68,10 +69,7 @@ void draw(){
       previousTime = currentTime;
     }
   }
-  
-  if (mousePressed){
-    bullet(mouseX,600,50,50);
-  }
+
   /*
   if(currentTime - previousTime >= timer){
     moveYA += 20;
@@ -88,13 +86,5 @@ void draw(){
   
   
   }
-  
 
-}
-
- 
-void bullet(int x,int y, int w, int h){
-  rectMode(CENTER);
-  fill(255);
-  rect(x,y,w,h);
 }
