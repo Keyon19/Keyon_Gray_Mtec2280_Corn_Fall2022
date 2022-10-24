@@ -79,7 +79,6 @@ void setup(){
 void draw(){
   background(0);
 
-  
   if (screenState == "home"){
     background(0);
     textSize(36);
@@ -122,10 +121,6 @@ void draw(){
   textSize(20);
   text("Points: " + counter, 350,50);
   
-  int currentTime = millis();
-  if (currentTime >timer){
-    screenState = "home"; 
-  }
+ 
 }
-
 }
