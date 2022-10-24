@@ -1,9 +1,12 @@
+// Use the left and right arrow to move
+// Use the Spacebar to shoot
+
 PImage playerImage;
 PImage alienImage;
 
-String screenState = "home";
+String screenState = "home"; 
 
-Alien[] alien = new Alien[5];
+Alien[] alien = new Alien[5]; 
 
 float alienposX = random(0,width);
 float alienposY = random(0,height);
@@ -73,6 +76,7 @@ void setup(){
 
 void draw(){
   background(0);
+  
   if (screenState == "home"){
     background(0);
     textSize(36);
@@ -99,8 +103,6 @@ void draw(){
   for(int i = 0; i<alien.length;i++){
     alien[i].move();
     alien[i].display();
-     
-
   }
   
   if (keyPressed && key == ' '){
