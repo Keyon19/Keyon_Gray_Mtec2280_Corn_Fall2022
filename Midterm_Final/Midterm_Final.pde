@@ -13,6 +13,8 @@ float alienposY = random(0,height);
 float alienspeed = random(0,5);
 
 int counter = 0;
+int currentTime = 0;
+int timer = 10000;
 
 float playerPos = width/2;
 float bulletX = width/2;
@@ -76,6 +78,7 @@ void setup(){
 
 void draw(){
   background(0);
+
   
   if (screenState == "home"){
     background(0);
@@ -118,7 +121,11 @@ void draw(){
  
   textSize(20);
   text("Points: " + counter, 350,50);
-
+  
+  int currentTime = millis();
+  if (currentTime >timer){
+    screenState = "home"; 
+  }
 }
 
 }
